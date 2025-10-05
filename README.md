@@ -1,59 +1,170 @@
-# PortfolioApp
+# Saransh Sharma - Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+A modern, responsive portfolio website built with Angular 20, featuring a unique notebook-style design with sketch elements and interactive effects.
 
-## Development server
+## 🎨 Features
 
-To start a local development server, run:
+- **Notebook-Style Design**: Paper-like background with grid lines and sketch elements
+- **Responsive Layout**: Optimized for all devices from mobile to desktop
+- **Interactive Elements**: Scribble trail effect following mouse movement
+- **Component Architecture**: Maintainable codebase with modular components
+- **Modern Tech Stack**: Angular 20, TypeScript, SCSS, HTML5
 
-```bash
-ng serve
+## 🚀 Automated Deployment
+
+This portfolio is set up with automated deployment to GitHub Pages. Whenever you push changes to the `main` branch, the following happens:
+
+1. GitHub Actions workflow is triggered
+2. The project is built using Angular CLI
+3. The built files are automatically deployed to GitHub Pages
+4. Your live portfolio is updated within minutes
+
+## 📁 Project Structure
+
+```
+├── src/
+│   ├── app/
+│   │   ├── components/          # Angular components
+│   │   │   ├── hero/           # Hero section
+│   │   │   ├── navigation/     # Navigation bar
+│   │   │   ├── about/          # About section
+│   │   │   ├── experience/     # Experience section
+│   │   │   ├── projects/       # Projects section
+│   │   │   ├── skills/         # Skills section
+│   │   │   ├── education/      # Education section
+│   │   │   └── contact/        # Contact section
+│   │   ├── app.html           # Main app template
+│   │   ├── app.ts             # Main app component
+│   │   └── app.scss           # Global styles
+│   ├── styles.scss            # Global styles
+│   └── index.html             # HTML entry point
+├── .github/
+│   └── workflows/
+│       └── deploy.yml         # GitHub Actions workflow
+├── angular.json               # Angular configuration
+├── package.json               # NPM dependencies
+└── README.md                  # This file
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Local Development
 
-## Code scaffolding
+To run this project locally:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Saransh1220/Saransh1220.github.io.git
+   cd Saransh1220.github.io
+   ```
 
-```bash
-ng generate component component-name
-```
+2. Install dependencies
+   ```bash
+   npm install
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3. Run the development server
+   ```bash
+   npm start
+   ```
 
-```bash
-ng generate --help
-```
+4. Open your browser and navigate to `http://localhost:4200/`
 
-## Building
+## 📦 Available Scripts
 
-To build the project run:
+- `npm start` - Starts the development server
+- `npm run build` - Builds the project for production
+- `npm run build:prod` - Builds the project with production optimizations
+- `npm run deploy` - Deploys the project to GitHub Pages
+- `npm test` - Runs the unit tests
 
-```bash
-ng build
-```
+## 🌐 Deployment
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Automated Deployment (Recommended)
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+The project is configured for automatic deployment to GitHub Pages. Simply push your changes to the `main` branch:
 
 ```bash
-ng e2e
+git add .
+git commit -m "Your commit message"
+git push origin main
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Your changes will be automatically built and deployed to GitHub Pages.
 
-## Additional Resources
+### Manual Deployment
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+If you need to deploy manually:
+
+1. Build the project
+   ```bash
+   npm run build:prod
+   ```
+
+2. Deploy to GitHub Pages
+   ```bash
+   npm run deploy
+   ```
+
+## 🎯 Customization
+
+### Adding New Sections
+
+1. Create a new component in `src/app/components/`
+2. Import and add it to `src/app/app.ts`
+3. Add the component to `src/app/app.html`
+4. Add navigation link in `src/app/components/navigation/`
+
+### Updating Personal Information
+
+Edit the data in `src/app/app.ts`:
+- `personalInfo` - Your name, tagline, contact details
+- `education` - Your educational background
+- `experience` - Your work experience
+- `projects` - Your featured projects
+- `skills` - Your technical skills
+- `certifications` - Your certifications
+
+### Modifying Styles
+
+- Global styles: `src/app/app.scss`
+- Component-specific styles: `src/app/components/[component]/[component].scss`
+- Theme variables: `src/styles.scss`
+
+## 🔧 GitHub Actions Workflow
+
+The deployment workflow (`.github/workflows/deploy.yml`) includes:
+
+- **Build Job**: Installs dependencies and builds the project
+- **Deploy Job**: Deploys the built files to GitHub Pages
+- **Triggers**: Runs on push to `main` branch and pull requests
+- **Permissions**: Configured with necessary permissions for deployment
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive with breakpoints for:
+- Large Desktop (1200px+)
+- Desktop (1024px-1199px)
+- Tablet (768px-1023px)
+- Mobile (600px-767px)
+- Small Mobile (480px-599px)
+- Ultra Small (360px-479px)
+
+## 🎨 Design System
+
+The portfolio uses a notebook-style design with:
+- Paper-like background with grid lines
+- Sketch-style borders and circular elements
+- Hand-drawn typography using Google Fonts
+- Pencil-like color scheme
+- Interactive hover effects and animations
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a pull request.
+
+---
+
+Built with ❤️ by Saransh Sharma

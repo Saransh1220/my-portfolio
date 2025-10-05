@@ -61,7 +61,7 @@ export class App {
   
   // Personal Information
   protected readonly personalInfo = signal({
-    name: 'Saransh Sharma',
+    name: 'gargi Sharma',
     tagline: 'Full Stack Developer | Cloud Enthusiast | AWS Certified',
     email: 'Saransh1220@gmail.com',
     phone: '+91 7876039602',

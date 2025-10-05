@@ -1,0 +1,18 @@
+<section id="education" class="extended-grid education-section">
+  <h2 class="text-center">Education</h2>
+  <div class="education-timeline">
+    @for (edu of education; track edu.id) {
+      <div class="sketch-border education-card">
+        <div class="education-header">
+          <h3>{{ edu.degree }}</h3>
+          <div class="institution">{{ edu.institution }}</div>
+          <div class="education-details">
+            <span class="percentage">{{ edu.percentage }}</span> | 
+            <span class="location">{{ edu.location }}</span>
+          </div>
+          <div class="duration">{{ edu.duration }}</div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

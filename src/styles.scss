@@ -1,0 +1,298 @@
+/* Import Google Fonts for notebook-style typography */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Kalam:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* Notebook color palette */
+:root {
+  --notebook-paper: #faf8f3;
+  --notebook-lines: #e8dcc6;
+  --notebook-grid: #d4c4b0;
+  --pencil-dark: #2c3e50;
+  --pencil-medium: #5d6d7e;
+  --pencil-light: #85929e;
+  --accent-blue: #3498db;
+  --accent-green: #27ae60;
+  --accent-orange: #e67e22;
+  --shadow-soft: rgba(0, 0, 0, 0.1);
+  --scribble-color: #34495e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--notebook-paper);
+  font-family: 'Kalam', cursive;
+  color: var(--pencil-dark);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Notebook paper texture background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      var(--notebook-lines) 39px,
+      var(--notebook-lines) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      var(--notebook-grid) 39px,
+      var(--notebook-grid) 40px
+    );
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Sketch-style container */
+.sketch-container {
+  position: relative;
+  background: var(--notebook-paper);
+  border: 2px solid var(--pencil-medium);
+  border-radius: 3px;
+  box-shadow: 3px 3px 10px var(--shadow-soft);
+  margin: 20px;
+  padding: 30px;
+  z-index: 2;
+}
+
+/* Sketch border effect */
+.sketch-border {
+  position: relative;
+  border: 1px solid var(--pencil-light);
+  padding: 20px;
+  margin: 15px 0;
+}
+
+.sketch-border::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 1px dashed var(--pencil-light);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Hand-drawn circle effect */
+.sketch-circle {
+  position: relative;
+  display: inline-block;
+  padding: 15px 25px;
+  border: 2px solid var(--pencil-medium);
+  border-radius: 50%;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.sketch-circle:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* Grid lines around sections */
+.grid-section {
+  position: relative;
+  border: 1px solid var(--notebook-grid);
+  margin: 30px 0;
+  padding: 25px;
+}
+
+.grid-section::before,
+.grid-section::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--pencil-light);
+}
+
+.grid-section::before {
+  top: -10px;
+  left: -10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.grid-section::after {
+  bottom: -10px;
+  right: -10px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Extended grid lines */
+.extended-grid {
+  position: relative;
+  padding: 30px;
+  margin: 40px 20px;
+}
+
+.extended-grid::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border: 1px solid var(--pencil-light);
+  opacity: 0.4;
+}
+
+.extended-grid::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 60px;
+  height: 1px;
+  background: var(--pencil-light);
+  transform: translateX(-50%);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  color: var(--pencil-dark);
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  transform: rotate(-1deg);
+}
+
+h2 {
+  font-size: 2.5rem;
+  transform: rotate(0.5deg);
+}
+
+h3 {
+  font-size: 2rem;
+  transform: rotate(-0.5deg);
+}
+
+p {
+  font-family: 'Kalam', cursive;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--pencil-medium);
+}
+
+/* Code blocks */
+code {
+  font-family: 'Space Mono', monospace;
+  background: var(--notebook-lines);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+/* Links */
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-blue);
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: var(--pencil-dark);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Buttons */
+.sketch-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--notebook-paper);
+  border: 2px solid var(--pencil-medium);
+  border-radius: 5px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--pencil-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: rotate(-1deg);
+  position: relative;
+}
+
+.sketch-button:hover {
+  transform: rotate(0deg) scale(1.05);
+  background: var(--accent-blue);
+  color: white;
+  border-color: var(--accent-blue);
+}
+
+/* Scribble cursor trail */
+.scribble-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.6;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sketch-container {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}

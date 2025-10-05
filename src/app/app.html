@@ -1,0 +1,42 @@
+<!-- Scribble trail effect container -->
+<div class="scribble-container" (mousemove)="onMouseMove($event)">
+  <!-- Navigation -->
+  <app-navigation [personalInfo]="personalInfo()"></app-navigation>
+
+  <!-- Hero Section -->
+  <app-hero [personalInfo]="personalInfo()"></app-hero>
+
+  <!-- About Section -->
+  <app-about [certifications]="certifications()"></app-about>
+
+  <!-- Experience Section -->
+  <app-experience [experience]="experience()"></app-experience>
+
+  <!-- Projects Section -->
+  <app-projects [projects]="projects()"></app-projects>
+
+  <!-- Skills Section -->
+  <app-skills 
+    [frontendSkills]="frontendSkills()"
+    [backendSkills]="backendSkills()"
+    [databases]="databases()"
+    [cloudDevops]="cloudDevops()"
+    [tools]="tools()">
+  </app-skills>
+
+  <!-- Education Section -->
+  <!-- <app-education [education]="education()"></app-education> -->
+
+  <!-- Contact Section -->
+  <app-contact [personalInfo]="personalInfo()"></app-contact>
+
+  <!-- Footer -->
+  <footer class="sketch-border footer">
+    <p>&copy; 2024 {{ personalInfo().name }}. Crafted with <span class="heart">♥</span> and lots of coffee</p>
+  </footer>
+</div>
+
+<!-- Scribble trail elements will be dynamically added here -->
+<div id="scribble-container"></div>
+
+<router-outlet />

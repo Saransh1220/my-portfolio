@@ -1,0 +1,21 @@
+<section id="experience" class="extended-grid experience-section">
+  <h2 class="text-center">Professional Experience</h2>
+  <div class="experience-timeline">
+    @for (exp of experience; track exp.id) {
+      <div class="sketch-border experience-card">
+        <div class="experience-header">
+          <h3>{{ exp.title }}</h3>
+          <div class="company-info">
+            <strong>{{ exp.company }}</strong> | {{ exp.location }}
+          </div>
+          <div class="duration">{{ exp.duration }}</div>
+        </div>
+        <ul class="responsibilities">
+          @for (resp of exp.responsibilities; track resp) {
+            <li>{{ resp }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</section>

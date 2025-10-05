@@ -1,0 +1,60 @@
+<section id="contact" class="extended-grid contact-section">
+  <h2 class="text-center">Let's Connect</h2>
+  <div class="contact-container">
+    <div class="sketch-border contact-info">
+      <p class="contact-intro">
+        I'm always excited to collaborate on innovative projects and connect with fellow developers. 
+        Whether you're looking for a team member, have a question, or just want to share ideas - I'd love to hear from you!
+      </p>
+      
+      <div class="contact-methods">
+        <div class="contact-primary">
+          <h3 class="contact-method-title">
+            <span class="contact-icon">📧</span>
+            Email
+          </h3>
+          <a href="mailto:{{ personalInfo.email }}" class="contact-link">
+            {{ personalInfo.email }}
+          </a>
+          <p class="contact-note">Best way to reach me for professional inquiries</p>
+        </div>
+
+        <div class="contact-secondary">
+          <h3 class="contact-method-title">
+            <span class="contact-icon">💼</span>
+            Professional Networks
+          </h3>
+          <div class="professional-links">
+            <a href="https://{{ personalInfo.linkedin }}" target="_blank" class="professional-link sketch-border">
+              <span class="link-icon">in</span>
+              LinkedIn
+            </a>
+            <a href="https://{{ personalInfo.github }}" target="_blank" class="professional-link sketch-border">
+              <span class="link-icon">gh</span>
+              GitHub
+            </a>
+          </div>
+          <p class="contact-note">Let's connect and build something amazing together</p>
+        </div>
+
+        <div class="contact-location">
+          <h3 class="contact-method-title">
+            <span class="contact-icon">📍</span>
+            Based In
+          </h3>
+          <p>{{ personalInfo.location }}</p>
+          <p class="contact-note">Open to remote opportunities worldwide</p>
+        </div>
+      </div>
+
+      <div class="contact-cta">
+        <button class="sketch-button" (click)="scrollToSection('projects')">
+          View My Work First
+        </button>
+        <a href="mailto:{{ personalInfo.email }}" class="sketch-button contact-button">
+          Send Me a Message
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

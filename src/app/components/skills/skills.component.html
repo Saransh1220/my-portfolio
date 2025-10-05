@@ -1,0 +1,45 @@
+<section id="skills" class="grid-section skills-section">
+  <h2 class="text-center">Technical Skills</h2>
+  <div class="skills-container">
+    <div class="skill-category">
+      <h3 class="sketch-circle">Frontend</h3>
+      <div class="skill-list">
+        @for (skill of frontendSkills; track skill) {
+          <div class="skill-item sketch-border">{{ skill }}</div>
+        }
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3 class="sketch-circle">Backend</h3>
+      <div class="skill-list">
+        @for (skill of backendSkills; track skill) {
+          <div class="skill-item sketch-border">{{ skill }}</div>
+        }
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3 class="sketch-circle">Databases</h3>
+      <div class="skill-list">
+        @for (skill of databases; track skill) {
+          <div class="skill-item sketch-border">{{ skill }}</div>
+        }
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3 class="sketch-circle">Cloud & DevOps</h3>
+      <div class="skill-list">
+        @for (skill of cloudDevops; track skill) {
+          <div class="skill-item sketch-border">{{ skill }}</div>
+        }
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3 class="sketch-circle">Tools</h3>
+      <div class="skill-list">
+        @for (skill of tools; track skill) {
+          <div class="skill-item sketch-border">{{ skill }}</div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+<section id="about" class="grid-section about-section">
+  <h2 class="text-center">About Me</h2>
+  <div class="about-content">
+    <div class="sketch-border about-text">
+      <p>I'm a results-driven Full Stack Developer with a Master's in Computer Applications and a passion for creating innovative digital solutions. My journey in tech has been focused on building scalable applications that make a meaningful impact.</p>
+      <p class="mt-20">With experience across various domains including enterprise applications, real-time communication systems, and cloud-based solutions, I bring a versatile approach to problem-solving. I believe in writing clean, maintainable code and continuously expanding my technical expertise.</p>
+      <p class="mt-20">When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sketching out ideas for the next innovative solution.</p>
+    </div>
+    <div class="sketch-border certifications">
+      <h3>Certifications</h3>
+      @for (cert of certifications; track cert.name) {
+        <div class="cert-item sketch-border">
+          <strong>{{ cert.name }}</strong>
+          <span class="cert-date">{{ cert.date }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

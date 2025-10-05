@@ -1,0 +1,114 @@
+/* Footer */
+.footer {
+  text-align: center;
+  margin: 40px 20px;
+  padding: 20px;
+  background: var(--notebook-lines);
+}
+
+.heart {
+  color: var(--accent-orange);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Scribble container */
+.scribble-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--notebook-lines);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pencil-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pencil-medium);
+}
+
+/* Global Responsive Design */
+@media (max-width: 1200px) {
+  .footer {
+    margin: 35px 15px;
+    padding: 18px;
+  }
+  
+  .footer p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    margin: 30px 15px;
+    padding: 15px;
+  }
+  
+  .footer p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin: 25px 15px;
+    padding: 15px;
+  }
+  
+  .footer p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    margin: 20px 10px;
+    padding: 12px;
+  }
+  
+  .footer p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    margin: 15px 10px;
+    padding: 10px;
+  }
+  
+  .footer p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    margin: 12px 8px;
+    padding: 8px;
+  }
+  
+  .footer p {
+    font-size: 0.7rem;
+  }
+}

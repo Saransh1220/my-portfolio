@@ -49,7 +49,8 @@
               ],
               "outputHashing": "all",
               "baseHref": "/",
-              "deployUrl": "/"
+              "deployUrl": "/",
+              "optimization": true
             },
             "development": {
               "optimization": false,

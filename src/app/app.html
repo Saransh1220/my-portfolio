@@ -1,39 +1,54 @@
 <!-- Scribble trail effect container -->
 <div class="scribble-container" (mousemove)="onMouseMove($event)">
-  <!-- Navigation -->
-  <app-navigation [personalInfo]="personalInfo()"></app-navigation>
+  <!-- Mobile Menu Toggle -->
+  <button class="mobile-menu-toggle sketch-border" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+    <!-- Hamburger Icon -->
+    <svg class="icon hamburger-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 12H21M3 6H21M3 18H21" stroke="var(--pencil-medium)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <!-- Close Icon -->
+    <svg class="icon close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 6L6 18M6 6L18 18" stroke="var(--pencil-medium)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
 
-  <!-- Hero Section -->
-  <app-hero [personalInfo]="personalInfo()"></app-hero>
+  <!-- Sidebar Navigation -->
+  <app-sidebar [personalInfo]="personalInfo()"></app-sidebar>
 
-  <!-- About Section -->
-  <app-about [certifications]="certifications()"></app-about>
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Hero Section -->
+    <app-hero [personalInfo]="personalInfo()"></app-hero>
 
-  <!-- Experience Section -->
-  <app-experience [experience]="experience()"></app-experience>
+    <!-- About Section -->
+    <app-about [certifications]="certifications()"></app-about>
 
-  <!-- Projects Section -->
-  <app-projects [projects]="projects()"></app-projects>
+    <!-- Experience Section -->
+    <app-experience [experience]="experience()"></app-experience>
 
-  <!-- Skills Section -->
-  <app-skills 
-    [frontendSkills]="frontendSkills()"
-    [backendSkills]="backendSkills()"
-    [databases]="databases()"
-    [cloudDevops]="cloudDevops()"
-    [tools]="tools()">
-  </app-skills>
+    <!-- Projects Section -->
+    <app-projects [projects]="projects()"></app-projects>
 
-  <!-- Education Section -->
-  <!-- <app-education [education]="education()"></app-education> -->
+    <!-- Skills Section -->
+    <app-skills
+      [frontendSkills]="frontendSkills()"
+      [backendSkills]="backendSkills()"
+      [databases]="databases()"
+      [cloudDevops]="cloudDevops()"
+      [tools]="tools()">
+    </app-skills>
 
-  <!-- Contact Section -->
-  <app-contact [personalInfo]="personalInfo()"></app-contact>
+    <!-- Education Section -->
+    <!-- <app-education [education]="education()"></app-education> -->
 
-  <!-- Footer -->
-  <footer class="sketch-border footer">
-    <p>&copy; 2024 {{ personalInfo().name }}. Crafted with <span class="heart">♥</span> and lots of coffee</p>
-  </footer>
+    <!-- Contact Section -->
+    <app-contact [personalInfo]="personalInfo()"></app-contact>
+
+    <!-- Footer -->
+    <footer class="sketch-border footer">
+      <p>&copy; 2024 {{ personalInfo().name }}. Crafted with <span class="heart">♥</span> and lots of coffee</p>
+    </footer>
+  </div>
 </div>
 
 <!-- Scribble trail elements will be dynamically added here -->

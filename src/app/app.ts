@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 // Import components
 import { HeroComponent } from './components/hero/hero.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AboutComponent } from './components/about/about.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ProjectsComponent } from './components/projects/projects.component';
@@ -42,10 +42,10 @@ interface Education {
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet, 
+    RouterOutlet,
     CommonModule,
     HeroComponent,
-    NavigationComponent,
+    SidebarComponent,
     AboutComponent,
     ExperienceComponent,
     ProjectsComponent,
@@ -174,9 +174,15 @@ export class App {
   ]);
 
   // Scribble trail effect
-  private scribbleElements: HTMLElement[] = [];
-  private maxScribbles = 5;
+  private scribblePath: string = '';
+  private pathPoints: {x: number, y: number, timestamp: number}[] = [];
+  private lastX: number = 0;
+  private lastY: number = 0;
+  private isDrawing: boolean = false;
   private scribbleTimeout: any;
+  private animationFrame: number | null = null;
+  private currentPath: SVGElement | null = null;
+  protected isMobileMenuOpen = false;
 
   constructor() {}
 
@@ -189,79 +195,192 @@ export class App {
   }
 
   onMouseMove(event: MouseEvent) {
-    this.createScribble(event.clientX, event.clientY);
+    this.createContinuousLine(event.clientX, event.clientY);
   }
 
-  private createScribble(x: number, y: number) {
+  private createContinuousLine(x: number, y: number) {
     // Clear existing timeout
     if (this.scribbleTimeout) {
       clearTimeout(this.scribbleTimeout);
     }
 
-    // Create new scribble element
-    const scribble = document.createElement('div');
-    scribble.className = 'scribble-trail';
-    scribble.style.left = `${x}px`;
-    scribble.style.top = `${y}px`;
-    
-    // Generate random scribble path
-    const path = this.generateScribblePath();
-    scribble.innerHTML = `
-      <svg width="40" height="40" style="position: absolute; transform: translate(-20px, -20px);">
-        <path d="${path}" stroke="var(--scribble-color)" stroke-width="1.5" fill="none" opacity="0.6"/>
-      </svg>
-    `;
-
-    // Add to container
-    const container = document.getElementById('scribble-container');
-    if (container) {
-      container.appendChild(scribble);
-      this.scribbleElements.push(scribble);
-
-      // Remove old scribbles if we have too many
-      if (this.scribbleElements.length > this.maxScribbles) {
-        const oldScribble = this.scribbleElements.shift();
-        if (oldScribble) {
-          oldScribble.remove();
-        }
-      }
-
-      // Fade out and remove
-      setTimeout(() => {
-        scribble.style.opacity = '0';
-        setTimeout(() => {
-          scribble.remove();
-          const index = this.scribbleElements.indexOf(scribble);
-          if (index > -1) {
-            this.scribbleElements.splice(index, 1);
-          }
-        }, 500);
-      }, 100);
-
-      // Set timeout to clear all scribbles after mouse stops
-      this.scribbleTimeout = setTimeout(() => {
-        this.clearAllScribbles();
-      }, 2000);
+    // If this is the first point, start a new path
+    if (!this.isDrawing) {
+      this.startNewPath(x, y, null as any);
+      return;
     }
+
+    // Calculate distance from last point
+    const distance = Math.sqrt(Math.pow(x - this.lastX, 2) + Math.pow(y - this.lastY, 2));
+    
+    // Only add to path if moved enough distance
+    if (distance > 5) {
+      // Add new point to the path with timestamp
+      const now = Date.now();
+      this.pathPoints.push({x, y, timestamp: now});
+      this.lastX = x;
+      this.lastY = y;
+      
+      // Start animation if not already running
+      if (!this.animationFrame) {
+        this.animatePath();
+      }
+    }
+
+    // Set timeout to clear the line after mouse stops
+    this.scribbleTimeout = setTimeout(() => {
+      this.clearLine();
+    }, 1000); // Faster clear timeout
   }
 
-  private generateScribblePath(): string {
-    const paths = [
-      'M10,20 Q15,10 20,15 T30,10',
-      'M15,15 Q20,25 25,15 T35,20',
-      'M8,12 Q18,8 22,18 T32,12',
-      'M12,8 Q8,18 18,22 T28,16',
-      'M20,10 Q10,15 15,25 T25,15'
-    ];
-    return paths[Math.floor(Math.random() * paths.length)];
+  private animatePath() {
+    const now = Date.now();
+    const maxAge = 300; // Points older than 300ms start fading
+    
+    // Remove old points
+    this.pathPoints = this.pathPoints.filter(point => now - point.timestamp < maxAge * 2);
+    
+    if (this.pathPoints.length === 0) {
+      this.clearLine();
+      return;
+    }
+    
+    // Rebuild the path with fading segments
+    this.rebuildPathWithFade();
+    
+    // Continue animation with faster frame rate
+    this.animationFrame = requestAnimationFrame(() => this.animatePath());
+  }
+
+  private rebuildPathWithFade() {
+    if (!this.currentPath) return;
+    
+    const now = Date.now();
+    const maxAge = 300; // Points older than 300ms start fading
+    
+    // Create multiple path segments for different opacity levels
+    let pathString = '';
+    let opacitySegments: {path: string, opacity: number}[] = [];
+    
+    // Group points by age for different opacity levels
+    for (let i = 0; i < this.pathPoints.length; i++) {
+      const point = this.pathPoints[i];
+      const age = now - point.timestamp;
+      
+      // Calculate opacity based on age with faster fade
+      let opacity = 1;
+      if (age > maxAge) {
+        opacity = Math.max(0, 1 - (age - maxAge) / maxAge);
+      }
+      
+      // Add point to current segment
+      if (pathString === '') {
+        pathString = `M${point.x},${point.y}`;
+      } else {
+        pathString += ` L${point.x},${point.y}`;
+      }
+      
+      // If opacity changed, save current segment and start a new one
+      if (i < this.pathPoints.length - 1) {
+        const nextPoint = this.pathPoints[i + 1];
+        const nextAge = now - nextPoint.timestamp;
+        let nextOpacity = 1;
+        if (nextAge > maxAge) {
+          nextOpacity = Math.max(0, 1 - (nextAge - maxAge) / maxAge);
+        }
+        
+        if (Math.abs(opacity - nextOpacity) > 0.05) { // More sensitive to opacity changes
+          opacitySegments.push({path: pathString, opacity});
+          pathString = `M${point.x},${point.y}`;
+        }
+      } else {
+        // Add the last segment
+        opacitySegments.push({path: pathString, opacity});
+      }
+    }
+    
+    // Clear existing paths
+    while (this.currentPath.firstChild) {
+      this.currentPath.removeChild(this.currentPath.firstChild);
+    }
+    
+    // Create path elements for each opacity level
+    opacitySegments.forEach(segment => {
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', segment.path);
+      path.setAttribute('stroke', 'var(--pencil-medium)');
+      path.setAttribute('stroke-width', '1.5');
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke-linecap', 'round');
+      path.setAttribute('stroke-linejoin', 'round');
+      path.setAttribute('opacity', segment.opacity.toString());
+      if (this.currentPath) {
+        this.currentPath.appendChild(path);
+      }
+    });
+  }
+
+  private startNewPath(x: number, y: number, container: HTMLElement) {
+    // Create new SVG element for the path
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '100vw');
+    svg.setAttribute('height', '100vh');
+    svg.style.position = 'fixed';
+    svg.style.top = '0';
+    svg.style.left = '0';
+    svg.style.pointerEvents = 'none';
+    svg.style.zIndex = '1';
+    
+    // Create path element
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('stroke', 'var(--pencil-medium)');
+    path.setAttribute('stroke-width', '1.5');
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('opacity', '0.7');
+    
+    // Start the path at the current position
+    this.scribblePath = `M${x},${y}`;
+    this.lastX = x;
+    this.lastY = y;
+    this.isDrawing = true;
+    
+    // Add path to SVG
+    svg.appendChild(path);
+    document.body.appendChild(svg);
+    this.currentPath = svg;
+  }
+
+  private clearLine() {
+    // Cancel animation frame
+    if (this.animationFrame) {
+      cancelAnimationFrame(this.animationFrame);
+      this.animationFrame = null;
+    }
+    
+    if (this.currentPath) {
+      // Fade out the line
+      this.currentPath.style.transition = 'opacity 0.5s ease';
+      this.currentPath.style.opacity = '0';
+      
+      // Remove after fade out
+      setTimeout(() => {
+        if (this.currentPath) {
+          this.currentPath.remove();
+          this.currentPath = null;
+        }
+      }, 500);
+    }
+    
+    // Reset drawing state
+    this.isDrawing = false;
+    this.scribblePath = '';
+    this.pathPoints = [];
   }
 
   private clearAllScribbles() {
-    this.scribbleElements.forEach(scribble => {
-      scribble.style.opacity = '0';
-      setTimeout(() => scribble.remove(), 300);
-    });
-    this.scribbleElements = [];
+    this.clearLine();
   }
 
   private initializeScribbleEffect() {
@@ -275,7 +394,7 @@ export class App {
       container.style.width = '100%';
       container.style.height = '100%';
       container.style.pointerEvents = 'none';
-      container.style.zIndex = '9999';
+      container.style.zIndex = '1';
       document.body.appendChild(container);
     }
   }
@@ -284,6 +403,22 @@ export class App {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    const sidebar = document.querySelector('.sidebar') as HTMLElement;
+    if (sidebar) {
+      sidebar.classList.toggle('open', this.isMobileMenuOpen);
+    }
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+    const sidebar = document.querySelector('.sidebar') as HTMLElement;
+    if (sidebar) {
+      sidebar.classList.remove('open');
     }
   }
 }

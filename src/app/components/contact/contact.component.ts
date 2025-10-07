@@ -1,8 +1,14 @@
 import { Component, Input } from '@angular/core';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import {featherLinkedin, featherGithub} from '@ng-icons/feather-icons';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [NgIcon],
+  viewProviders: [provideIcons({
+    featherLinkedin,
+    featherGithub
+  })],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

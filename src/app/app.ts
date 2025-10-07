@@ -146,7 +146,7 @@ export class App {
 
   // Skills
   protected readonly frontendSkills = signal([
-    'Angular', 'React', 'Next.js', 'TypeScript', 'HTML5', 'CSS3', 'TailwindCSS', 'Bootstrap'
+    'Angular', 'TypeScript', 'HTML5', 'CSS3', 'TailwindCSS', 'Bootstrap'
   ]);
 
   protected readonly backendSkills = signal([

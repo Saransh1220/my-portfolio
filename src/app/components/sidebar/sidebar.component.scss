@@ -251,6 +251,19 @@
   border-top: 1px dashed #d4c4b0;
   position: relative;
   z-index: 3;
+  align-self: stretch;
+}
+
+.resume-section .resume-download-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Ensure resume section is visible in mobile sidebar */
+@media (max-width: 768px) {
+  .resume-section {
+    order: 999; /* Ensure it appears last in the mobile menu */
+  }
 }
 
 .resume-download-btn {

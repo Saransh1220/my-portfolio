@@ -26,6 +26,88 @@
   overflow: hidden;
 }
 
+/* Resume Section */
+.resume-section {
+  margin-bottom: 30px;
+}
+
+.resume-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.resume-content {
+  background: var(--notebook-paper);
+  border: 2px solid var(--pencil-light);
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 3px 3px 10px var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--pencil-dark);
+}
+
+.resume-content p {
+  margin-bottom: 25px;
+  color: var(--pencil-medium);
+  line-height: 1.6;
+}
+
+.resume-cta {
+  margin-top: 20px;
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent-blue);
+  color: white !important;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.resume-button:hover {
+  background: #1e3a5f;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button-icon {
+  font-size: 1.2rem;
+}
+
+/* Mobile Responsive for Resume Section */
+@media (max-width: 768px) {
+  .resume-content {
+    padding: 20px;
+    margin: 0 15px;
+  }
+
+  .resume-button {
+    padding: 10px 20px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .resume-container {
+    padding: 0 10px;
+  }
+}
+
 /* Add notebook lines to main content */
 .main-content::before {
   content: '';

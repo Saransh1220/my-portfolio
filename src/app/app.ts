@@ -1,6 +1,8 @@
 import { Component, signal, OnInit, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { featherFileText } from '@ng-icons/feather-icons';
 
 // Import components
 import { HeroComponent } from './components/hero/hero.component';
@@ -44,6 +46,7 @@ interface Education {
   imports: [
     RouterOutlet,
     CommonModule,
+    NgIcon,
     HeroComponent,
     SidebarComponent,
     AboutComponent,
@@ -55,6 +58,7 @@ interface Education {
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
+  viewProviders: [provideIcons({ featherFileText })],
 })
 export class App {
   protected readonly title = signal('Saransh Sharma');

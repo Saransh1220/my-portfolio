@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname "$0")/_/husky.sh"
-
-echo " 🚀 Pushing Saransh's portfolio to GitHub! 💻"
-
-# You can add tests or other checks here
-# npm test
-
-echo " ✅ Push complete! Code deployed successfully! 🌍"

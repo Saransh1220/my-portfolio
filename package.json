@@ -9,7 +9,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng deploy --base-href=/",
-    "prepare": "echo Skipping prepare step",
     "prettier": "prettier --check \"src/**/*.{ts,html,scss,json,md}\"",
     "prettier:fix": "prettier --write \"src/**/*.{ts,html,scss,json,md}\""
   },

@@ -9,8 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng deploy --base-href=/",
-    "prepare": "if not defined CI (husky) else (echo Husky skipped in CI)",
-    "postinstall": "if not defined CI (husky install) else (echo Husky install skipped in CI)"
+    "prepare": "node -e \"if(process.env.CI !== 'true') require('child_process').execSync('npx husky', { stdio: 'inherit' });\"",
+    "postinstall": "node -e \"if(process.env.CI !== 'true') require('child_process').execSync('npx husky install', { stdio: 'inherit' });\""
   },
   "prettier": {
     "printWidth": 100,

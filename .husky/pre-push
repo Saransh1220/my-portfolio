@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🚀 Initiating push sequence..."
+echo "   _____          _   _____  _    _ _____   _____ "
+echo "  / ____|        | | |  __ \| |  | |  __ \ / ____|"
+echo " | |     __ _ ___| |_| |__) | |  | | |  | | (___  "
+echo " | |    / _\` / __| __|  _  /| |  | | |  | |\___ \ "
+echo " | |___| (_| \__ \ |_| | \ \| |__| | |__| |____) |"
+echo "  \_____\__,_|___/\__|_|  \_\\____/|_____/|_____/ "
+echo ""
+echo " 🚀 Pushing your awesome portfolio to the world! 🌍"
+
+# You can add tests or other checks here
+# npm test
+
+echo " 🎉 Push sequence complete! Your code is on its way!"

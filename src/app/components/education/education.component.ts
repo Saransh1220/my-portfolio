@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-education',
   imports: [],
   templateUrl: './education.component.html',
-  styleUrl: './education.component.scss'
+  styleUrl: './education.component.scss',
 })
 export class EducationComponent {
   @Input() education: any[] = [];

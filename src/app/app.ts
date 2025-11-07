@@ -51,14 +51,14 @@ interface Education {
     ProjectsComponent,
     SkillsComponent,
     EducationComponent,
-    ContactComponent
+    ContactComponent,
   ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('Saransh Sharma');
-  
+
   // Personal Information
   protected readonly personalInfo = signal({
     name: 'Saransh Sharma',
@@ -67,7 +67,7 @@ export class App {
     phone: '+91 7876039602',
     linkedin: 'linkedin.com/in/saransh-sharma-68b400249',
     github: 'github.com/Saransh1220',
-    location: 'Mohali, Punjab'
+    location: 'Mohali, Punjab',
   });
 
   // Education
@@ -78,7 +78,7 @@ export class App {
       institution: 'Lovely Professional University',
       percentage: '75.9%',
       location: 'Phagwara, Punjab',
-      duration: 'Sep. 2022– June 2024'
+      duration: 'Sep. 2022– June 2024',
     },
     {
       id: 2,
@@ -86,8 +86,8 @@ export class App {
       institution: 'Chandigarh Group of Colleges',
       percentage: '74.9%',
       location: 'Landran, Punjab',
-      duration: 'July 2019– July 2022'
-    }
+      duration: 'July 2019– July 2022',
+    },
   ]);
 
   // Experience
@@ -103,8 +103,8 @@ export class App {
         'Integrated third-party healthcare services including Athena Health for EHR management and Voyce for multilingual interpretation services',
         'Implemented real-time communication features using PubNub for instant messaging and notifications',
         'Leveraged AWS services (S3, SQS, SES) to ensure reliable and scalable telehealth operations',
-        'Utilized New Relic for application performance monitoring, debugging, and optimization'
-      ]
+        'Utilized New Relic for application performance monitoring, debugging, and optimization',
+      ],
     },
     {
       id: 2,
@@ -114,9 +114,9 @@ export class App {
       duration: 'June 2021– August 2021',
       responsibilities: [
         'Engineered and deployed a dynamic University Management System using HTML, CSS, PHP, and SQL',
-        'Achieved 40% decrease in administrative workload and 20% increase in student satisfaction'
-      ]
-    }
+        'Achieved 40% decrease in administrative workload and 20% increase in student satisfaction',
+      ],
+    },
   ]);
 
   // Projects
@@ -124,58 +124,71 @@ export class App {
     {
       id: 1,
       title: 'Telescope Health - Telehealth Platform',
-      description: 'Built a production-grade telehealth application with microservices architecture handling patient management, appointment scheduling, and virtual consultations. Integrated Athena Health API for electronic health records and Voyce for real-time multilingual interpretation.',
+      description:
+        'Built a production-grade telehealth application with microservices architecture handling patient management, appointment scheduling, and virtual consultations. Integrated Athena Health API for electronic health records and Voyce for real-time multilingual interpretation.',
       technologies: ['Angular', 'LoopBack 4', 'PostgreSQL', 'AWS', 'PubNub'],
-      githubUrl: 'https://github.com/Saransh1220'
+      githubUrl: 'https://github.com/Saransh1220',
     },
     {
       id: 2,
       title: 'CampusHUB - Community Discussion Platform',
-      description: 'Designed and developed a community-based web application enabling students to join interest-based communities and participate in Q&A discussions. Implemented user authentication, community management, and real-time post/comment functionality.',
+      description:
+        'Designed and developed a community-based web application enabling students to join interest-based communities and participate in Q&A discussions. Implemented user authentication, community management, and real-time post/comment functionality.',
       technologies: ['React', 'Next.js', 'TailwindCSS', 'MongoDB'],
-      githubUrl: 'https://github.com/Saransh1220'
+      githubUrl: 'https://github.com/Saransh1220',
     },
     {
       id: 3,
       title: 'Document Converter',
-      description: 'Created a serverless document conversion service supporting Word to PDF and PDF to Word conversions using AWS Lambda and S3 buckets. Extended functionality to support multiple file format conversions with automatic processing triggers.',
+      description:
+        'Created a serverless document conversion service supporting Word to PDF and PDF to Word conversions using AWS Lambda and S3 buckets. Extended functionality to support multiple file format conversions with automatic processing triggers.',
       technologies: ['AWS Lambda', 'S3', 'Python'],
-      githubUrl: 'https://github.com/Saransh1220'
-    }
+      githubUrl: 'https://github.com/Saransh1220',
+    },
   ]);
 
   // Skills
   protected readonly frontendSkills = signal([
-    'Angular', 'TypeScript', 'HTML5', 'CSS3', 'TailwindCSS', 'Bootstrap'
+    'Angular',
+    'TypeScript',
+    'HTML5',
+    'CSS3',
+    'TailwindCSS',
+    'Bootstrap',
   ]);
 
   protected readonly backendSkills = signal([
-    'Node.js', 'Express.js', 'LoopBack 4', 'Python', 'Sequelize ORM', 'REST APIs', 'Microservices'
+    'Node.js',
+    'Express.js',
+    'LoopBack 4',
+    'Python',
+    'Sequelize ORM',
+    'REST APIs',
+    'Microservices',
   ]);
 
-  protected readonly databases = signal([
-    'PostgreSQL', 'MongoDB', 'MySQL', 'SQL'
-  ]);
+  protected readonly databases = signal(['PostgreSQL', 'MongoDB', 'MySQL', 'SQL']);
 
   protected readonly cloudDevops = signal([
-    'AWS (S3, SQS, SES, EC2, Lambda)', 'Docker', 'Git', 'New Relic'
+    'AWS (S3, SQS, SES, EC2, Lambda)',
+    'Docker',
+    'Git',
+    'New Relic',
   ]);
 
-  protected readonly tools = signal([
-    'Jasmine', 'Karma', 'VS Code', 'PubNub'
-  ]);
+  protected readonly tools = signal(['Jasmine', 'Karma', 'VS Code', 'PubNub']);
 
   // Certifications
   protected readonly certifications = signal([
     {
       name: 'AWS Certified Developer - Associate (DVA-C02)',
-      date: 'June 2025'
-    }
+      date: 'June 2025',
+    },
   ]);
 
   // Scribble trail effect
   private scribblePath: string = '';
-  private pathPoints: {x: number, y: number, timestamp: number}[] = [];
+  private pathPoints: { x: number; y: number; timestamp: number }[] = [];
   private lastX: number = 0;
   private lastY: number = 0;
   private isDrawing: boolean = false;
@@ -212,15 +225,15 @@ export class App {
 
     // Calculate distance from last point
     const distance = Math.sqrt(Math.pow(x - this.lastX, 2) + Math.pow(y - this.lastY, 2));
-    
+
     // Only add to path if moved enough distance
     if (distance > 5) {
       // Add new point to the path with timestamp
       const now = Date.now();
-      this.pathPoints.push({x, y, timestamp: now});
+      this.pathPoints.push({ x, y, timestamp: now });
       this.lastX = x;
       this.lastY = y;
-      
+
       // Start animation if not already running
       if (!this.animationFrame) {
         this.animatePath();
@@ -236,50 +249,50 @@ export class App {
   private animatePath() {
     const now = Date.now();
     const maxAge = 300; // Points older than 300ms start fading
-    
+
     // Remove old points
-    this.pathPoints = this.pathPoints.filter(point => now - point.timestamp < maxAge * 2);
-    
+    this.pathPoints = this.pathPoints.filter((point) => now - point.timestamp < maxAge * 2);
+
     if (this.pathPoints.length === 0) {
       this.clearLine();
       return;
     }
-    
+
     // Rebuild the path with fading segments
     this.rebuildPathWithFade();
-    
+
     // Continue animation with faster frame rate
     this.animationFrame = requestAnimationFrame(() => this.animatePath());
   }
 
   private rebuildPathWithFade() {
     if (!this.currentPath) return;
-    
+
     const now = Date.now();
     const maxAge = 300; // Points older than 300ms start fading
-    
+
     // Create multiple path segments for different opacity levels
     let pathString = '';
-    let opacitySegments: {path: string, opacity: number}[] = [];
-    
+    let opacitySegments: { path: string; opacity: number }[] = [];
+
     // Group points by age for different opacity levels
     for (let i = 0; i < this.pathPoints.length; i++) {
       const point = this.pathPoints[i];
       const age = now - point.timestamp;
-      
+
       // Calculate opacity based on age with faster fade
       let opacity = 1;
       if (age > maxAge) {
         opacity = Math.max(0, 1 - (age - maxAge) / maxAge);
       }
-      
+
       // Add point to current segment
       if (pathString === '') {
         pathString = `M${point.x},${point.y}`;
       } else {
         pathString += ` L${point.x},${point.y}`;
       }
-      
+
       // If opacity changed, save current segment and start a new one
       if (i < this.pathPoints.length - 1) {
         const nextPoint = this.pathPoints[i + 1];
@@ -288,24 +301,25 @@ export class App {
         if (nextAge > maxAge) {
           nextOpacity = Math.max(0, 1 - (nextAge - maxAge) / maxAge);
         }
-        
-        if (Math.abs(opacity - nextOpacity) > 0.05) { // More sensitive to opacity changes
-          opacitySegments.push({path: pathString, opacity});
+
+        if (Math.abs(opacity - nextOpacity) > 0.05) {
+          // More sensitive to opacity changes
+          opacitySegments.push({ path: pathString, opacity });
           pathString = `M${point.x},${point.y}`;
         }
       } else {
         // Add the last segment
-        opacitySegments.push({path: pathString, opacity});
+        opacitySegments.push({ path: pathString, opacity });
       }
     }
-    
+
     // Clear existing paths
     while (this.currentPath.firstChild) {
       this.currentPath.removeChild(this.currentPath.firstChild);
     }
-    
+
     // Create path elements for each opacity level
-    opacitySegments.forEach(segment => {
+    opacitySegments.forEach((segment) => {
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       path.setAttribute('d', segment.path);
       path.setAttribute('stroke', 'var(--pencil-medium)');
@@ -330,7 +344,7 @@ export class App {
     svg.style.left = '0';
     svg.style.pointerEvents = 'none';
     svg.style.zIndex = '1';
-    
+
     // Create path element
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('stroke', 'var(--pencil-medium)');
@@ -339,13 +353,13 @@ export class App {
     path.setAttribute('stroke-linecap', 'round');
     path.setAttribute('stroke-linejoin', 'round');
     path.setAttribute('opacity', '0.7');
-    
+
     // Start the path at the current position
     this.scribblePath = `M${x},${y}`;
     this.lastX = x;
     this.lastY = y;
     this.isDrawing = true;
-    
+
     // Add path to SVG
     svg.appendChild(path);
     document.body.appendChild(svg);
@@ -358,12 +372,12 @@ export class App {
       cancelAnimationFrame(this.animationFrame);
       this.animationFrame = null;
     }
-    
+
     if (this.currentPath) {
       // Fade out the line
       this.currentPath.style.transition = 'opacity 0.5s ease';
       this.currentPath.style.opacity = '0';
-      
+
       // Remove after fade out
       setTimeout(() => {
         if (this.currentPath) {
@@ -372,7 +386,7 @@ export class App {
         }
       }, 500);
     }
-    
+
     // Reset drawing state
     this.isDrawing = false;
     this.scribblePath = '';

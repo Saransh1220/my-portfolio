@@ -57,16 +57,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle at 20% 50%,
-    rgba(0, 0, 0, 0.03) 0%,
-    transparent 50%
-  ),
-  radial-gradient(
-    circle at 80% 50%,
-    rgba(0, 0, 0, 0.03) 0%,
-    transparent 50%
-  );
+  background:
+    radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
   border-radius: 2px;
   pointer-events: none;
   z-index: 2;
@@ -132,7 +125,6 @@
   gap: 15px;
 }
 
-
 .profile-name {
   font-family: 'Caveat', cursive;
   font-size: 2rem;
@@ -177,12 +169,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(to right,
-    transparent 0%,
-    #8b7355 20%,
-    #8b7355 80%,
-    transparent 100%
-  );
+  background: linear-gradient(to right, transparent 0%, #8b7355 20%, #8b7355 80%, transparent 100%);
   border-radius: 1px;
   transform: rotate(0.8deg);
 }
@@ -257,6 +244,47 @@
   font-weight: 500;
 }
 
+/* Resume Download Section */
+.resume-section {
+  padding-top: 15px;
+  margin-top: auto;
+  border-top: 1px dashed #d4c4b0;
+  position: relative;
+  z-index: 3;
+}
+
+.resume-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: var(--accent-blue);
+  color: white;
+  text-decoration: none;
+  font-family: 'Kalam', cursive;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid transparent;
+  width: 100%;
+}
+
+.resume-download-btn:hover {
+  background: #1e3a5f;
+  transform: translateX(5px);
+  color: white;
+}
+
+.resume-download-btn .nav-icon {
+  color: white;
+}
+
+.resume-download-btn .nav-text {
+  color: white;
+  font-weight: 600;
+}
 
 /* Responsive Design */
 @media (max-width: 1400px) {
@@ -264,16 +292,16 @@
     width: 260px;
     padding: 20px;
   }
-  
+
   .profile-logo {
     width: 110px;
     height: 110px;
   }
-  
+
   .logo-initials {
     font-size: 3.2rem;
   }
-  
+
   .profile-name {
     font-size: 1.9rem;
   }
@@ -284,20 +312,20 @@
     width: 240px;
     padding: 20px;
   }
-  
+
   .profile-logo {
     width: 100px;
     height: 100px;
   }
-  
+
   .logo-initials {
     font-size: 3rem;
   }
-  
+
   .profile-name {
     font-size: 1.8rem;
   }
-  
+
   .profile-tagline {
     font-size: 0.9rem;
   }
@@ -308,20 +336,19 @@
     width: 220px;
     padding: 15px;
   }
-  
-  
+
   .profile-name {
     font-size: 1.6rem;
   }
-  
+
   .profile-tagline {
     font-size: 0.85rem;
   }
-  
+
   .nav-title {
     font-size: 1.4rem;
   }
-  
+
   .nav-link {
     padding: 8px 12px;
     font-size: 0.9rem;
@@ -341,24 +368,24 @@
     transform: translateX(0);
     transition: transform 0.3s ease;
   }
-  
+
   .sidebar.open {
     transform: translateX(280px);
   }
-  
+
   .profile-logo {
     width: 90px;
     height: 90px;
   }
-  
+
   .logo-initials {
     font-size: 2.7rem;
   }
-  
+
   .profile-name {
     font-size: 1.6rem;
   }
-  
+
   .profile-tagline {
     font-size: 0.85rem;
   }

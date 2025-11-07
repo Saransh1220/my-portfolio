@@ -13,7 +13,9 @@
 .education-card {
   padding: 30px;
   background: var(--notebook-paper);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .education-card:hover {
@@ -48,27 +50,27 @@
   .education-section {
     margin: 50px 15px;
   }
-  
+
   .education-timeline {
     gap: 25px;
   }
-  
+
   .education-card {
     padding: 25px;
   }
-  
+
   .education-header h3 {
     font-size: 1.3rem;
   }
-  
+
   .institution {
     font-size: 0.95rem;
   }
-  
+
   .education-details {
     font-size: 0.85rem;
   }
-  
+
   .duration {
     font-size: 0.8rem;
   }
@@ -78,27 +80,27 @@
   .education-section {
     margin: 45px 15px;
   }
-  
+
   .education-timeline {
     gap: 20px;
   }
-  
+
   .education-card {
     padding: 20px;
   }
-  
+
   .education-header h3 {
     font-size: 1.2rem;
   }
-  
+
   .institution {
     font-size: 0.9rem;
   }
-  
+
   .education-details {
     font-size: 0.8rem;
   }
-  
+
   .duration {
     font-size: 0.75rem;
   }
@@ -108,28 +110,28 @@
   .education-section {
     margin: 40px 15px;
   }
-  
+
   .education-timeline {
     gap: 20px;
     margin-top: 25px;
   }
-  
+
   .education-card {
     padding: 20px;
   }
-  
+
   .education-header h3 {
     font-size: 1.2rem;
   }
-  
+
   .institution {
     font-size: 0.9rem;
   }
-  
+
   .education-details {
     font-size: 0.8rem;
   }
-  
+
   .duration {
     font-size: 0.75rem;
   }
@@ -139,23 +141,23 @@
   .education-section {
     margin: 35px 10px;
   }
-  
+
   .education-card {
     padding: 18px;
   }
-  
+
   .education-header h3 {
     font-size: 1.1rem;
   }
-  
+
   .institution {
     font-size: 0.85rem;
   }
-  
+
   .education-details {
     font-size: 0.75rem;
   }
-  
+
   .duration {
     font-size: 0.7rem;
   }
@@ -165,28 +167,28 @@
   .education-section {
     margin: 30px 10px;
   }
-  
+
   .education-timeline {
     gap: 15px;
     margin-top: 20px;
   }
-  
+
   .education-card {
     padding: 15px;
   }
-  
+
   .education-header h3 {
     font-size: 1rem;
   }
-  
+
   .institution {
     font-size: 0.8rem;
   }
-  
+
   .education-details {
     font-size: 0.7rem;
   }
-  
+
   .duration {
     font-size: 0.65rem;
   }
@@ -196,23 +198,23 @@
   .education-section {
     margin: 25px 8px;
   }
-  
+
   .education-card {
     padding: 12px;
   }
-  
+
   .education-header h3 {
     font-size: 0.95rem;
   }
-  
+
   .institution {
     font-size: 0.75rem;
   }
-  
+
   .education-details {
     font-size: 0.65rem;
   }
-  
+
   .duration {
     font-size: 0.6rem;
   }

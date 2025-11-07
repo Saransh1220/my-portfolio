@@ -4,11 +4,11 @@ import { Component, Input } from '@angular/core';
   selector: 'app-hero',
   imports: [],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  styleUrl: './hero.component.scss',
 })
 export class HeroComponent {
   @Input() personalInfo: any;
-  
+
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {

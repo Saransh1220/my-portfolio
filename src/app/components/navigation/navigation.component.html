@@ -1,47 +1,99 @@
 <header class="sketch-border navigation">
   <nav class="nav-content">
     <div class="logo sketch-circle">{{ personalInfo.name }}</div>
-    
+
     <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle sketch-border" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+    <button
+      class="mobile-menu-toggle sketch-border"
+      (click)="toggleMobileMenu()"
+      [class.active]="isMobileMenuOpen"
+    >
       <!-- Hamburger Icon -->
-      <svg class="icon hamburger-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 12H21M3 6H21M3 18H21" stroke="var(--pencil-medium)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg
+        class="icon hamburger-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12H21M3 6H21M3 18H21"
+          stroke="var(--pencil-medium)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       </svg>
       <!-- Close Icon -->
-      <svg class="icon close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 6L6 18M6 6L18 18" stroke="var(--pencil-medium)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg
+        class="icon close-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6L18 18"
+          stroke="var(--pencil-medium)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       </svg>
     </button>
-    
+
     <!-- Desktop Navigation -->
     <ul class="nav-links desktop-nav">
       <li><a href="#home" class="nav-link" (click)="scrollToSection('home')">Home</a></li>
       <li><a href="#about" class="nav-link" (click)="scrollToSection('about')">About</a></li>
-      <li><a href="#experience" class="nav-link" (click)="scrollToSection('experience')">Experience</a></li>
-      <li><a href="#projects" class="nav-link" (click)="scrollToSection('projects')">Projects</a></li>
+      <li>
+        <a href="#experience" class="nav-link" (click)="scrollToSection('experience')"
+          >Experience</a
+        >
+      </li>
+      <li>
+        <a href="#projects" class="nav-link" (click)="scrollToSection('projects')">Projects</a>
+      </li>
       <li><a href="#skills" class="nav-link" (click)="scrollToSection('skills')">Skills</a></li>
-      <li><a href="#education" class="nav-link" (click)="scrollToSection('education')">Education</a></li>
+      <li>
+        <a href="#education" class="nav-link" (click)="scrollToSection('education')">Education</a>
+      </li>
       <li><a href="#contact" class="nav-link" (click)="scrollToSection('contact')">Contact</a></li>
     </ul>
-    
+
     <!-- Mobile Navigation -->
     <div class="mobile-nav" [class.open]="isMobileMenuOpen">
       <div class="mobile-nav-backdrop" (click)="closeMobileMenu()"></div>
       <div class="mobile-nav-content sketch-border">
         <button class="mobile-nav-close sketch-border" (click)="closeMobileMenu()">
           <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18M6 6L18 18" stroke="var(--pencil-medium)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M18 6L6 18M6 6L18 18"
+              stroke="var(--pencil-medium)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </button>
         <ul class="mobile-nav-links">
           <li><a href="#home" class="nav-link" (click)="scrollToSection('home')">Home</a></li>
           <li><a href="#about" class="nav-link" (click)="scrollToSection('about')">About</a></li>
-          <li><a href="#experience" class="nav-link" (click)="scrollToSection('experience')">Experience</a></li>
-          <li><a href="#projects" class="nav-link" (click)="scrollToSection('projects')">Projects</a></li>
+          <li>
+            <a href="#experience" class="nav-link" (click)="scrollToSection('experience')"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="nav-link" (click)="scrollToSection('projects')">Projects</a>
+          </li>
           <li><a href="#skills" class="nav-link" (click)="scrollToSection('skills')">Skills</a></li>
-          <li><a href="#education" class="nav-link" (click)="scrollToSection('education')">Education</a></li>
-          <li><a href="#contact" class="nav-link" (click)="scrollToSection('contact')">Contact</a></li>
+          <li>
+            <a href="#education" class="nav-link" (click)="scrollToSection('education')"
+              >Education</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav-link" (click)="scrollToSection('contact')">Contact</a>
+          </li>
         </ul>
       </div>
     </div>

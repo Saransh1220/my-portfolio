@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-skills',
   imports: [],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss'
+  styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
   @Input() frontendSkills: string[] = [];

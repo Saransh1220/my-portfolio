@@ -14,7 +14,12 @@
         <p>{{ project.description }}</p>
         <div class="project-links">
           @if (project.githubUrl) {
-            <a [href]="project.githubUrl" target="_blank" class="project-link sketch-button highlight">GitHub</a>
+            <a
+              [href]="project.githubUrl"
+              target="_blank"
+              class="project-link sketch-button highlight"
+              >GitHub</a
+            >
           }
         </div>
       </div>

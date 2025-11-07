@@ -34,7 +34,9 @@
   padding: 25px;
   background: var(--notebook-lines);
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .contact-primary:hover,
@@ -139,25 +141,25 @@
   .contact-section {
     margin: 50px 15px;
   }
-  
+
   .contact-info {
     padding: 35px;
   }
-  
+
   .contact-intro {
     font-size: 1.1rem;
   }
-  
+
   .contact-methods {
     gap: 25px;
   }
-  
+
   .contact-primary,
   .contact-secondary,
   .contact-location {
     padding: 20px;
   }
-  
+
   .contact-method-title {
     font-size: 1.2rem;
   }
@@ -167,34 +169,34 @@
   .contact-section {
     margin: 45px 15px;
   }
-  
+
   .contact-info {
     padding: 30px;
   }
-  
+
   .contact-intro {
     font-size: 1rem;
     line-height: 1.7;
   }
-  
+
   .contact-methods {
     gap: 20px;
   }
-  
+
   .contact-primary,
   .contact-secondary,
   .contact-location {
     padding: 18px;
   }
-  
+
   .contact-method-title {
     font-size: 1.1rem;
   }
-  
+
   .contact-link {
     font-size: 1rem;
   }
-  
+
   .professional-link {
     padding: 8px 12px;
   }
@@ -204,51 +206,51 @@
   .contact-section {
     margin: 40px 15px;
   }
-  
+
   .contact-info {
     padding: 25px;
   }
-  
+
   .contact-intro {
     font-size: 1rem;
     line-height: 1.6;
   }
-  
+
   .contact-methods {
     gap: 20px;
     margin-bottom: 30px;
   }
-  
+
   .contact-primary,
   .contact-secondary,
   .contact-location {
     padding: 18px;
   }
-  
+
   .contact-method-title {
     font-size: 1.1rem;
   }
-  
+
   .contact-link {
     font-size: 0.95rem;
   }
-  
+
   .professional-links {
     justify-content: center;
     gap: 10px;
   }
-  
+
   .professional-link {
     padding: 8px 12px;
     font-size: 0.9rem;
   }
-  
+
   .contact-cta {
     flex-direction: column;
     align-items: center;
     gap: 15px;
   }
-  
+
   .contact-cta .sketch-button {
     width: 100%;
     max-width: 250px;
@@ -259,51 +261,51 @@
   .contact-section {
     margin: 35px 10px;
   }
-  
+
   .contact-info {
     padding: 20px;
   }
-  
+
   .contact-intro {
     font-size: 0.95rem;
     line-height: 1.5;
   }
-  
+
   .contact-methods {
     gap: 15px;
   }
-  
+
   .contact-primary,
   .contact-secondary,
   .contact-location {
     padding: 15px;
   }
-  
+
   .contact-method-title {
     font-size: 1rem;
     gap: 8px;
   }
-  
+
   .contact-icon {
     font-size: 1.3rem;
   }
-  
+
   .contact-link {
     font-size: 0.9rem;
   }
-  
+
   .professional-links {
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
-  
+
   .professional-link {
     width: 100%;
     max-width: 200px;
     justify-content: center;
   }
-  
+
   .contact-cta .sketch-button {
     max-width: 200px;
   }
@@ -313,54 +315,54 @@
   .contact-section {
     margin: 30px 10px;
   }
-  
+
   .contact-info {
     padding: 18px;
   }
-  
+
   .contact-intro {
     font-size: 0.9rem;
     line-height: 1.5;
   }
-  
+
   .contact-methods {
     gap: 15px;
     margin-bottom: 25px;
   }
-  
+
   .contact-primary,
   .contact-secondary,
   .contact-location {
     padding: 12px;
   }
-  
+
   .contact-method-title {
     font-size: 0.95rem;
   }
-  
+
   .contact-icon {
     font-size: 1.2rem;
   }
-  
+
   .contact-link {
     font-size: 0.85rem;
   }
-  
+
   .professional-link {
     padding: 6px 10px;
     font-size: 0.85rem;
   }
-  
+
   .link-icon {
     width: 20px;
     height: 20px;
     font-size: 0.6rem;
   }
-  
+
   .contact-cta {
     gap: 12px;
   }
-  
+
   .contact-cta .sketch-button {
     font-size: 0.9rem;
     padding: 8px 16px;
@@ -372,31 +374,31 @@
   .contact-section {
     margin: 25px 8px;
   }
-  
+
   .contact-info {
     padding: 15px;
   }
-  
+
   .contact-intro {
     font-size: 0.85rem;
   }
-  
+
   .contact-method-title {
     font-size: 0.9rem;
   }
-  
+
   .contact-icon {
     font-size: 1.1rem;
   }
-  
+
   .contact-link {
     font-size: 0.8rem;
   }
-  
+
   .professional-link {
     font-size: 0.8rem;
   }
-  
+
   .contact-cta .sketch-button {
     font-size: 0.85rem;
     padding: 6px 12px;

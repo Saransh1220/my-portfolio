@@ -4,7 +4,8 @@
   padding: 20px;
   max-width: 900px;
   width: 100%;
-  background: linear-gradient(to right,
+  background: linear-gradient(
+    to right,
     rgba(249, 247, 244, 0.8) 0%,
     rgba(249, 247, 244, 0.95) 20%,
     rgba(249, 247, 244, 1) 40%
@@ -33,14 +34,13 @@
   left: 340px;
   width: calc(100% - 340px);
   height: 100%;
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 39px,
-      var(--notebook-lines) 39px,
-      var(--notebook-lines) 40px
-    );
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 39px,
+    var(--notebook-lines) 39px,
+    var(--notebook-lines) 40px
+  );
   opacity: 0.3;
   pointer-events: none;
   z-index: 1;
@@ -63,9 +63,15 @@
 }
 
 @keyframes heartbeat {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Scribble container */
@@ -163,7 +169,7 @@ html {
     margin-left: 300px;
     width: calc(100vw - 300px);
   }
-  
+
   .notebook-container {
     padding: 60px 40px 40px;
     max-width: none;
@@ -177,23 +183,23 @@ html {
     width: calc(100vw - 280px);
     padding: 0;
   }
-  
+
   .notebook-container {
     padding: 50px 30px 30px;
     max-width: none;
     width: 100%;
   }
-  
+
   .notebook-paper {
     padding: 30px;
     width: 100%;
   }
-  
+
   .page-content {
     padding-left: 50px;
     width: 100%;
   }
-  
+
   .paper-holes {
     left: 15px;
   }
@@ -205,27 +211,27 @@ html {
     width: calc(100vw - 270px);
     padding: 0;
   }
-  
+
   .notebook-container {
     padding: 40px 20px 20px;
     max-width: none;
     width: 100%;
   }
-  
+
   .notebook-paper {
     padding: 25px;
     width: 100%;
   }
-  
+
   .page-content {
     padding-left: 40px;
     width: 100%;
   }
-  
+
   .paper-holes {
     left: 10px;
   }
-  
+
   .hole {
     width: 8px;
     height: 8px;
@@ -236,23 +242,23 @@ html {
   .mobile-menu-toggle {
     display: flex;
   }
-  
+
   .main-content {
     margin-left: 0;
     padding: 15px;
     max-width: 100%;
   }
-  
+
   .page-section {
     padding: 20px;
     margin-bottom: 20px;
   }
-  
+
   .footer {
     margin: 25px 15px;
     padding: 15px;
   }
-  
+
   .footer p {
     font-size: 0.85rem;
   }
@@ -263,35 +269,35 @@ html {
     padding: 0;
     width: 100vw;
   }
-  
+
   .notebook-container {
     padding: 50px 15px 15px;
     width: 100%;
     max-width: none;
   }
-  
+
   .notebook-paper {
     padding: 15px;
     width: 100%;
   }
-  
+
   .page-content {
     padding-left: 30px;
     width: 100%;
   }
-  
+
   .page-section {
     padding: 18px;
     margin-bottom: 18px;
     width: 100%;
   }
-  
+
   .footer {
     margin: 0;
     padding: 12px 0;
     width: 100%;
   }
-  
+
   .footer p {
     font-size: 0.8rem;
   }
@@ -302,35 +308,35 @@ html {
     padding: 0;
     width: 100vw;
   }
-  
+
   .notebook-container {
     padding: 40px 10px 10px;
     width: 100%;
     max-width: none;
   }
-  
+
   .notebook-paper {
     padding: 10px;
     width: 100%;
   }
-  
+
   .page-content {
     padding-left: 25px;
     width: 100%;
   }
-  
+
   .page-section {
     padding: 15px;
     margin-bottom: 15px;
     width: 100%;
   }
-  
+
   .footer {
     margin: 0;
     padding: 10px 0;
     width: 100%;
   }
-  
+
   .footer p {
     font-size: 0.75rem;
   }
@@ -341,35 +347,35 @@ html {
     padding: 0;
     width: 100vw;
   }
-  
+
   .notebook-container {
     padding: 30px 8px 8px;
     width: 100%;
     max-width: none;
   }
-  
+
   .notebook-paper {
     padding: 8px;
     width: 100%;
   }
-  
+
   .page-content {
     padding-left: 20px;
     width: 100%;
   }
-  
+
   .page-section {
     padding: 12px;
     margin-bottom: 12px;
     width: 100%;
   }
-  
+
   .footer {
     margin: 0;
     padding: 8px 0;
     width: 100%;
   }
-  
+
   .footer p {
     font-size: 0.7rem;
   }

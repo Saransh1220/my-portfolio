@@ -1,14 +1,35 @@
 <!-- Scribble trail effect container -->
 <div class="scribble-container" (mousemove)="onMouseMove($event)">
   <!-- Mobile Menu Toggle -->
-  <button class="mobile-menu-toggle sketch-border" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+  <button
+    class="mobile-menu-toggle sketch-border"
+    (click)="toggleMobileMenu()"
+    [class.active]="isMobileMenuOpen"
+  >
     <!-- Hamburger Icon -->
-    <svg class="icon hamburger-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 12H21M3 6H21M3 18H21" stroke="var(--pencil-medium)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg
+      class="icon hamburger-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3 12H21M3 6H21M3 18H21"
+        stroke="var(--pencil-medium)"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
     </svg>
     <!-- Close Icon -->
     <svg class="icon close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18 6L6 18M6 6L18 18" stroke="var(--pencil-medium)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path
+        d="M18 6L6 18M6 6L18 18"
+        stroke="var(--pencil-medium)"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
     </svg>
   </button>
 
@@ -35,7 +56,8 @@
       [backendSkills]="backendSkills()"
       [databases]="databases()"
       [cloudDevops]="cloudDevops()"
-      [tools]="tools()">
+      [tools]="tools()"
+    >
     </app-skills>
 
     <!-- Education Section -->
@@ -46,7 +68,10 @@
 
     <!-- Footer -->
     <footer class="sketch-border footer">
-      <p>&copy; 2024 {{ personalInfo().name }}. Crafted with <span class="heart">♥</span> and lots of coffee</p>
+      <p>
+        &copy; 2024 {{ personalInfo().name }}. Crafted with <span class="heart">♥</span> and lots
+        of coffee
+      </p>
     </footer>
   </div>
 </div>

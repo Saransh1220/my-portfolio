@@ -1,0 +1,17 @@
+# Saran's Resume
+
+This is a placeholder for Saran's resume. This file would be replaced with your actual resume in PDF format.
+
+## Contact Information
+- Email: saran@example.com
+- Phone: (123) 456-7890
+- Location: Your City, Country
+
+## Experience
+- Job Title at Company (2022-Present)
+- Job Title at Previous Company (2020-2022)
+
+## Skills
+- Skill 1
+- Skill 2
+- Skill 3

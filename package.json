@@ -9,8 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng deploy --base-href=/",
-    "prepare": "husky",
-    "postinstall": "husky install"
+    "prepare": "if not defined CI (husky) else (echo Husky skipped in CI)",
+    "postinstall": "if not defined CI (husky install) else (echo Husky install skipped in CI)"
   },
   "prettier": {
     "printWidth": 100,

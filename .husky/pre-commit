@@ -1,7 +1,0 @@
-echo "🔍 Running pre-commit checks..."
-npm run build -- --configuration=development --optimization=false
-
-# Uncomment the following lines if you have linting set up
-# npm run lint
-
-echo "✅ Pre-commit checks completed!"

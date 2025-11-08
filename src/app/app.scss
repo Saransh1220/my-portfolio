@@ -2,8 +2,8 @@
 .main-content {
   margin-left: 340px; /* Sidebar width + margins */
   padding: 20px;
-  max-width: 900px;
-  width: 100%;
+  width: calc(100vw - 340px); /* Calculate remaining width */
+  max-width: calc(100vw - 340px); /* Ensure it doesn't exceed available space */
   background: linear-gradient(
     to right,
     rgba(249, 247, 244, 0.8) 0%,
@@ -32,7 +32,7 @@
 }
 
 .resume-container {
-  max-width: 900px;
+  max-width: calc(100% - 40px); /* Account for padding */
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -114,7 +114,7 @@
   position: fixed;
   top: 0;
   left: 340px;
-  width: calc(100% - 340px);
+  width: calc(100vw - 340px);
   height: 100%;
   background-image: repeating-linear-gradient(
     0deg,
@@ -134,7 +134,7 @@
   margin: 40px 20px;
   padding: 20px;
   background: var(--notebook-lines);
-  max-width: 900px;
+  max-width: calc(100% - 40px); /* Account for margins */
   margin-left: auto;
   margin-right: auto;
 }
@@ -250,6 +250,12 @@ html {
   .main-content {
     margin-left: 300px;
     width: calc(100vw - 300px);
+    max-width: calc(100vw - 300px);
+  }
+
+  .main-content::before {
+    left: 300px;
+    width: calc(100vw - 300px);
   }
 
   .notebook-container {
@@ -263,7 +269,13 @@ html {
   .main-content {
     margin-left: 280px;
     width: calc(100vw - 280px);
+    max-width: calc(100vw - 280px);
     padding: 0;
+  }
+
+  .main-content::before {
+    left: 280px;
+    width: calc(100vw - 280px);
   }
 
   .notebook-container {
@@ -291,7 +303,13 @@ html {
   .main-content {
     margin-left: 270px;
     width: calc(100vw - 270px);
+    max-width: calc(100vw - 270px);
     padding: 0;
+  }
+
+  .main-content::before {
+    left: 270px;
+    width: calc(100vw - 270px);
   }
 
   .notebook-container {
@@ -328,7 +346,13 @@ html {
   .main-content {
     margin-left: 0;
     padding: 15px;
-    max-width: 100%;
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .main-content::before {
+    left: 0;
+    width: 100vw;
   }
 
   .page-section {
@@ -339,6 +363,8 @@ html {
   .footer {
     margin: 25px 15px;
     padding: 15px;
+    width: calc(100% - 30px);
+    max-width: none;
   }
 
   .footer p {
@@ -349,6 +375,12 @@ html {
 @media (max-width: 600px) {
   .main-content {
     padding: 0;
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .main-content::before {
+    left: 0;
     width: 100vw;
   }
 
@@ -389,6 +421,12 @@ html {
   .main-content {
     padding: 0;
     width: 100vw;
+    max-width: 100vw;
+  }
+
+  .main-content::before {
+    left: 0;
+    width: 100vw;
   }
 
   .notebook-container {
@@ -427,6 +465,12 @@ html {
 @media (max-width: 360px) {
   .main-content {
     padding: 0;
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .main-content::before {
+    left: 0;
     width: 100vw;
   }
 

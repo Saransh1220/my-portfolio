@@ -264,7 +264,7 @@
     position: relative;
     order: 10; /* Position it after navigation items but before any other elements */
   }
-  
+
   .sidebar.open {
     overflow-y: auto; /* Ensure content is scrollable when open */
   }

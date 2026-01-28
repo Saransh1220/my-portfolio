@@ -186,13 +186,12 @@ export class App {
   protected readonly certifications = signal([
     {
       name: 'Databricks Certified Generative AI Engineer – Associate',
-      date:'Dec 2025'
+      date: 'Dec 2025',
     },
     {
       name: 'AWS Certified Developer - Associate (DVA-C02)',
       date: 'June 2025',
     },
-    
   ]);
 
   // Scribble trail effect

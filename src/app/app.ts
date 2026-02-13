@@ -143,6 +143,24 @@ export class App {
     },
     {
       id: 3,
+      title: 'Blueprint-Audio - Audio Marketplace',
+      description:
+        'Full-stack audio beat/sample marketplace platform where producers upload beats with multi-tier licensing (Basic, Premium, Trackout, Unlimited) and buyers browse, preview, and purchase content. Built with modular architecture, real-time analytics, producer dashboard, Razorpay payments, and Cloudflare R2 storage.',
+      technologies: [
+        'Angular',
+        'Go',
+        'PostgreSQL',
+        'Redis',
+        'Cloudflare R2',
+        'Docker',
+        'Razorpay',
+        'JWT',
+      ],
+      githubUrl: 'https://github.com/Saransh1220/Blueprint-Audio-Backend',
+      liveUrl: 'https://github.com/Saransh1220/Blueprint-Audio',
+    },
+    {
+      id: 4,
       title: 'Document Converter',
       description:
         'Created a serverless document conversion service supporting Word to PDF and PDF to Word conversions using AWS Lambda and S3 buckets. Extended functionality to support multiple file format conversions with automatic processing triggers.',
@@ -162,6 +180,7 @@ export class App {
   ]);
 
   protected readonly backendSkills = signal([
+    'Go',
     'Node.js',
     'Express.js',
     'LoopBack 4',
@@ -169,13 +188,17 @@ export class App {
     'Sequelize ORM',
     'REST APIs',
     'Microservices',
+    'JWT',
+    'Razorpay',
   ]);
 
-  protected readonly databases = signal(['PostgreSQL', 'MongoDB', 'MySQL', 'SQL']);
+  protected readonly databases = signal(['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'SQL']);
 
   protected readonly cloudDevops = signal([
     'AWS (S3, SQS, SES, EC2, Lambda)',
+    'Cloudflare R2',
     'Docker',
+    'Redis',
     'Git',
     'New Relic',
   ]);

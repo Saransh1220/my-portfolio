@@ -66,7 +66,7 @@ export class App {
   // Personal Information
   protected readonly personalInfo = signal({
     name: 'Saransh Sharma',
-    tagline: 'Full Stack Developer | Cloud Enthusiast | AWS Certified',
+    tagline: 'Full Stack Developer | Building stuff that actually works',
     email: 'Saransh1220@gmail.com',
     phone: '+91 7876039602',
     linkedin: 'linkedin.com/in/saransh-sharma-68b400249',
@@ -129,20 +129,12 @@ export class App {
       id: 1,
       title: 'Telescope Health - Telehealth Platform',
       description:
-        'Built a production-grade telehealth application with microservices architecture handling patient management, appointment scheduling, and virtual consultations. Integrated Athena Health API for electronic health records and Voyce for real-time multilingual interpretation.',
-      technologies: ['Angular', 'LoopBack 4', 'PostgreSQL', 'AWS', 'PubNub'],
+        'Built a production-grade telehealth application with microservices architecture handling patient management, appointment scheduling, and virtual consultations. Integrated Athena Health API for electronic health records, Voyce for real-time multilingual interpretation, and set up monitoring with Prometheus and Grafana for system observability.',
+      technologies: ['Angular', 'LoopBack 4', 'PostgreSQL', 'AWS', 'PubNub', 'Prometheus', 'Grafana'],
       githubUrl: 'https://github.com/Saransh1220',
     },
     {
       id: 2,
-      title: 'CampusHUB - Community Discussion Platform',
-      description:
-        'Designed and developed a community-based web application enabling students to join interest-based communities and participate in Q&A discussions. Implemented user authentication, community management, and real-time post/comment functionality.',
-      technologies: ['React', 'Next.js', 'TailwindCSS', 'MongoDB'],
-      githubUrl: 'https://github.com/Saransh1220',
-    },
-    {
-      id: 3,
       title: 'Blueprint-Audio - Audio Marketplace',
       description:
         'Full-stack audio beat/sample marketplace platform where producers upload beats with multi-tier licensing (Basic, Premium, Trackout, Unlimited) and buyers browse, preview, and purchase content. Built with modular architecture, real-time analytics, producer dashboard, Razorpay payments, and Cloudflare R2 storage.',
@@ -158,6 +150,14 @@ export class App {
       ],
       githubUrl: 'https://github.com/Saransh1220/Blueprint-Audio-Backend',
       liveUrl: 'https://github.com/Saransh1220/Blueprint-Audio',
+    },
+    {
+      id: 3,
+      title: 'CampusHUB - Community Discussion Platform',
+      description:
+        'Designed and developed a community-based web application enabling students to join interest-based communities and participate in Q&A discussions. Implemented user authentication, community management, and real-time post/comment functionality.',
+      technologies: ['React', 'Next.js', 'TailwindCSS', 'MongoDB'],
+      githubUrl: 'https://github.com/Saransh1220',
     },
     {
       id: 4,
@@ -199,6 +199,8 @@ export class App {
     'Cloudflare R2',
     'Docker',
     'Redis',
+    'Prometheus',
+    'Grafana',
     'Git',
     'New Relic',
   ]);
